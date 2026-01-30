@@ -84,9 +84,12 @@ def perform_login(
     response.raise_for_status()
 
     data = response.json()
-    if not data.get("success"):
-        error_msg = data.get("error", "Unknown login error")
-        raise CronometerAuthError(f"Login failed: {error_msg}")
+    # Successful login returns {"redirect": "...", "id": "..."}
+    # Failed login returns {"error": "..."}
+    if "error" in data:
+        raise CronometerAuthError(f"Login failed: {data['error']}")
+    if "redirect" not in data:
+        raise CronometerAuthError(f"Unexpected login response: {data}")
 
 
 def authenticate_gwt(session: requests.Session, config: GWTConfig) -> str:
