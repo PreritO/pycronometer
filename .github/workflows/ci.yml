@@ -23,7 +23,7 @@ jobs:
         run: uv python install ${{ matrix.python-version }}
 
       - name: Install dependencies
-        run: uv sync --dev
+        run: uv pip install -e ".[dev]"
 
       - name: Run linter
         run: uv run ruff check src tests
@@ -58,5 +58,5 @@ jobs:
 
       - name: Check package
         run: |
-          pip install twine
-          twine check dist/*
+          uv pip install twine
+          uv run twine check dist/*
