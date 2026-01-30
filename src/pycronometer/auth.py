@@ -8,7 +8,7 @@ Handles the multi-step authentication flow:
 """
 
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 
 from pycronometer.exceptions import CronometerAuthError, GWTVersionError
 from pycronometer.gwt import (
@@ -45,10 +45,14 @@ def extract_csrf_token(session: requests.Session) -> str:
     soup = BeautifulSoup(response.text, "html.parser")
     csrf_input = soup.find("input", {"name": "anticsrf"})
 
-    if not csrf_input or not csrf_input.get("value"):
+    if not isinstance(csrf_input, Tag):
         raise CronometerAuthError("Could not find CSRF token in login page")
 
-    return csrf_input["value"]
+    csrf_value = csrf_input.get("value")
+    if not csrf_value or not isinstance(csrf_value, str):
+        raise CronometerAuthError("CSRF token value is missing or invalid")
+
+    return csrf_value
 
 
 def perform_login(

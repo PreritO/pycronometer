@@ -12,8 +12,8 @@ Example usage:
 
 from pycronometer.client import CronometerClient
 from pycronometer.exceptions import (
-    CronometerError,
     CronometerAuthError,
+    CronometerError,
     ExportError,
     GWTVersionError,
 )
