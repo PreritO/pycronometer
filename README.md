@@ -13,7 +13,7 @@ pip install pycronometer
 Or install from source:
 
 ```bash
-pip install git+https://github.com/yourusername/pycronometer.git
+pip install git+https://github.com/PreritO/pycronometer.git
 ```
 
 ## Quick Start
@@ -189,7 +189,7 @@ Then either:
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/pycronometer.git
+git clone https://github.com/PreritO/pycronometer.git
 cd pycronometer
 
 # Install with dev dependencies
