@@ -1,0 +1,7 @@
+Day,Time,Food Name,Amount,Energy (kcal),Protein (g),Carbs (g),Fat (g),Fiber (g),Sugars (g),Sodium (mg),Food Group
+2024-01-15,08:30,Oatmeal,1 cup,150,5.0,27.0,3.0,4.0,1.0,0,Grains
+2024-01-15,08:30,Banana,1 medium,105,1.3,27.0,0.4,3.1,14.4,1,Fruits
+2024-01-15,12:30,Chicken Breast,4 oz,165,31.0,0.0,3.6,0.0,0.0,74,Protein
+2024-01-15,12:30,Brown Rice,1 cup,216,5.0,45.0,1.8,3.5,0.7,10,Grains
+2024-01-15,19:00,Salmon,6 oz,354,38.0,0.0,21.0,0.0,0.0,109,Protein
+2024-01-15,19:00,Broccoli,1 cup,55,3.7,11.0,0.6,5.1,2.2,64,Vegetables
