@@ -92,6 +92,7 @@ Thumbs.db
 .claude/plans/*.md
 !.claude/plans/.gitkeep
 
+.claude/*
 CLAUDE.md
 prd.json
 PRD.md
